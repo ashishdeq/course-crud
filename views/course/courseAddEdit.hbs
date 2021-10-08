@@ -1,0 +1,33 @@
+<!-- Obtaining value from the course controller -->
+<h3>{{viewTitle}}</h3>
+<form action="/course" method="POST">
+    <input type="hidden" name="_id" value="{{course._id}}">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" maxlength="100" class="form-control" name="courseName" placeholder="Name"
+            value="{{course.courseName}}">
+        <div class="text-danger">
+            {{course.courseNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label> ID</label>
+        <input type="number"  class="form-control" name="courseId" placeholder="Id"
+            value="{{course.courseId}}" required>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Duration</label>
+            <input type="number"  class="form-control" name="courseDuration"
+                placeholder="Duration (Hrs)" value="{{course.courseDuration}}" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label> Fee</label>
+            <input type="number" class="form-control" name="courseFee"
+                placeholder="Fee" value="{{course.courseFee}}" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/course/list"><i class="fa fa-list-alt"></i> View All Courses</a>
+    </div>
+</form>
